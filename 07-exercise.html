@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Exercise 7 Write a JavaScript function that creates a table, accept row, column numbers from the user, and input row-column number as content (e.g. Row-0 Column-0) of a cell. -->
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Change the content of a cell</title>
+    <style type="text/css">
+        body {
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="myTable" border="1">
+    </table>
+    <form>
+        <input type="text" id="row" />
+        <input type="text" id="col" />
+        <input type="button" onclick="createTable()" value="Create the table" />
+    </form>
+    <script>
+        function createTable() {
+            var row1 = parseInt(document.getElementById('row').value, 10);
+            var col1 = parseInt(document.getElementById('col').value, 10);
+            var table = document.getElementById('myTable');
+            for (var i = 0; i < row1; i++) {
+                var rows = table.insertRow(i);
+                for (var j = 0; j < col1; j++) {
+                    var cells = rows.insertCell(j)
+                    cells.innerHTML = "Row" + i + " Col" + j;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
