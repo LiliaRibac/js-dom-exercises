@@ -22,7 +22,22 @@
     <form action="" method="post" id="MyForm">
         <label for="radius">Radius</label><input type="text" name="radius" id="radius" required>
         <label for="volume">Volume</label><input type="text" name="volume" id="volume">
-        <input type="submit" value="Calculate" id="submit"> </form>
+        <input type="submit" value="Calculate" id="submit">
+    </form>
+
+    <script>
+        
+        document.getElementById("submit").onclick = calVolume;
+
+        function calVolume() {
+            var radius = document.getElementById("radius").value;
+            var volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+
+            document.getElementById("volume").value = volume.toFixed(2);
+
+            return false;
+        }
+    </script>
 </body>
 
 </html>
