@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<!-- Exercise 11  Write a JavaScript program to display a random image (clicking on a button) from the following list.-->
+
+<head>
+    <meta charset=utf-8 />
+    <title>Random image</title>
+    <style type="text/css">
+        body {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button id="image" onclick="randomImage();">Show Image</button>
+    </div>
+    <script>
+        function randomImage() {
+            var images  = [{
+                    src: 'http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg',
+                    width: "240",
+                    height: "160"
+                },
+
+                {
+                    src: 'http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg',
+                    width: "320",
+                    height: "195"
+                },
+
+                {
+                    src: "http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg",
+                    width: "500",
+                    height: "343"
+                }
+            ]
+
+            var temp = []
+            for(let i = 0; i<images.length; i++ ){
+                temp[i] = new Image();
+                temp[i].src = images[i].src;
+                temp[i].width = images[i].width;
+                temp[i].height = images[i].height;
+             }
+             var newImage = temp[Math.floor(Math.random() * temp.length)];
+             var allImages = document.getElementsByTagName("images");
+             for (let j = 0; j <allImages.length; j++){
+                 allImages[0].parentNode.removeChild(allImages[0]);
+             }
+             document.body.appendChild(newImage);
+         }
+    </script>
+</body>
+
+</html>
