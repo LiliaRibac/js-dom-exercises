@@ -14,13 +14,13 @@
 </body>
 <script>
     function getAttributes() {
-       var temp = document.getElementsByTagName("a")[0]
-       var atribute = temp.attributes
-       var addDiv = document.getElementById("hop");
+        var temp = document.getElementsByTagName("a")[0]
+        var atribute = temp.attributes
+        var addDiv = document.getElementById("hop");
 
-       for (let i = 0; i <atribute.length; i++){
-           addDiv.insertAdjacentHTML('beforebegin', "<div>" + atribute[i].name + "=" + atribute[i].value + "</div>" )
-       }
+        for (let i = 0; i < atribute.length; i++) {
+            addDiv.insertAdjacentHTML('beforebegin', "<div>" + atribute[i].name + "=" + atribute[i].value + "</div>")
+        }
     }
 </script>
 
